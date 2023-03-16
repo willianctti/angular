@@ -1,0 +1,78 @@
+npm i -g angular/cli //Começar o projeto
+instalando o client da angular
+
+
+cd
+
+ng new curso-angular
+criando pasta
+
+
+
+ng serve
+rodando o local host
+
+
+
+ng generate component components/first-componet
+criando o primeiro componente
+
+
+
+
+como são feitas intrerpolações?
+
+
+no arquivo TS faço as variáveis que posteriormente
+virão do banco de dados, exemplo:
+
+export class FirstComponentComponent {
+  name: string = 'Willian';
+  job = 'Desenvoledor'
+
+
+no arquivo html escrevo o código html que
+receberá as variaveis por meio da interpolações
+por exemplo:
+
+
+<h2>nome: {{ name }} </h2>
+<p>Profissão: {{job}}</p>
+
+
+
+transferir dado do componente pai para o 
+componente filho:
+
+
+
+ng generate component components/parent-data
+
+
+
+no pai (app.components) crio o pai:
+
+
+export class AppComponent {
+  userName = 'Bruna';
+
+
+
+
+<app-parent-data 
+[name]="userName"></app-parent-data>
+
+
+
+export class ParentDataComponent {
+  @Input() name: string = '';
+}
+
+
+
+<h1>Descrevendo usuário:</h1>
+<p>Nome: {{ name }}</p>
+
+
+
+
