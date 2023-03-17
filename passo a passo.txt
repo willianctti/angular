@@ -86,6 +86,12 @@ renderização condicional usando if
 
 eventos 
 
+
 this.show = !this.show; // toggle
 
+
+
+
+
+EventEmitter
 
