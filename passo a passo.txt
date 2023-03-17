@@ -95,3 +95,77 @@ this.show = !this.show; // toggle
 
 EventEmitter
 
+
+
+
+
+
+Renderização de listas:
+
+receber array como exeplo de um banco de dados
+na l[ogica do componente. 
+
+export class ListRenderComponent {
+  animals = [
+    {name: "Baleia", type: "Mar"},
+    {name: "Esquilo", type: "Terra"},
+    {name: "Calopsita", type: "ar"}
+  ]
+
+}
+
+
+fazer a interpolação no arquivo html para mostrar
+no front.
+<h2>Animais:</h2>
+    <ul>
+        <li *ngFor="let animal of animals">
+            nome: {{ animal.name }},
+            tipo: {{ animal.type }}
+        </li>
+    </ul>
+
+
+
+
+
+
+
+Interfaces no ANgular
+
+
+typeScript
+
+export interface Animal {
+    name: string
+    type: string
+    age: number
+
+} 
+
+
+
+export class ListRenderComponent {
+  animalDetails = ''
+  animals: Animal[] = [
+    {name: "Baleia", type: "Mar", age: 4},
+    {name: "Esquilo", type: "Terra", age: 10},
+    {name: "Calopsita", type: "ar", age: 57}
+  ]
+  showAge(animal: Animal) {
+    this.animalDetails = `O pet ${animal.name} tem ${animal.age} anos!`
+  }
+}
+
+
+
+
+
+
+
+
+
+    <button (click)="showAge(animal)">Show age</button>
+        </li>
+    </ul>
+    <h3>{{ animalDetails }}</h3>
