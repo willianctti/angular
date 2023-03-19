@@ -20,7 +20,7 @@ criando o primeiro componente
 
 
 
-como são feitas intrerpolações?
+como são feitas INTERPOLAÇÕES!!!!!!!!!!!!!!!!!
 
 
 no arquivo TS faço as variáveis que posteriormente
@@ -76,15 +76,15 @@ export class ParentDataComponent {
 
 
 
-diretivas
+DIRETIVAS!!!!!!!!!!!!!!!!!
 
-renderização condicional usando if
-
-
+RENDERIZAÇÃO CONDICIONAL
 
 
 
-eventos 
+
+
+EVENTOS!!!!!!!!!!!!!!!!!
 
 
 this.show = !this.show; // toggle
@@ -93,14 +93,14 @@ this.show = !this.show; // toggle
 
 
 
-EventEmitter
+EVENTEMITTER!!!!!!!!!!!!!!!!!
 
 
 
 
 
 
-Renderização de listas:
+RENDERIZAÇÃO DE LISTAS!!!!!!!!!!!!!!!!!
 
 receber array como exeplo de um banco de dados
 na l[ogica do componente. 
@@ -131,7 +131,7 @@ no front.
 
 
 
-Interfaces no ANgular
+INTERFACES NO ANGULAR!!!!!!!!!!!!!!!!!
 
 
 typeScript
@@ -169,3 +169,97 @@ export class ListRenderComponent {
         </li>
     </ul>
     <h3>{{ animalDetails }}</h3>
+
+
+
+
+
+
+
+PIPE OPERATORS!!!!!!!!!!!!!!!!!
+
+
+
+
+
+SERVICES!!!!!!!!!!!!!!!!!
+
+
+
+primeiramente criar service com 
+g generate service <nome>
+
+
+no componente, importar o service
+import { ListService } 
+from 'src/app/services/list.service';
+
+
+coloca-lo no constrcutor com privete 
+com listservice:Listservice
+
+
+constructor(private listService: ListService) {}
+
+
+criar um método chamado removeANimal(animal:ANimal)
+
+
+removeAnimal(animal: Animal) {
+    console.log("Animal removido")
+
+
+
+service importado
+
+
+
+
+
+
+no HTML, criar um botão para excluiir um animal
+
+ <button (click)="removeAnimal(animal
+            )">Excluir </button>
+
+
+
+
+no service, criar o que seria a recepçãp de um 
+banco de dados
+
+importar {Animal}
+
+ remove(animals: Animal[], animal: Animal) {
+    return animals.filter((a) => animal.name !== a.name)
+  } 
+
+
+
+
+
+ANGULAR ROUTER!!!!!!!!!!!!!!!!!
+
+
+arquivo de rotas
+
+app-routing.module.ts
+
+const routes: Routes = [
+  {path: '', component: FirstComponentComponent},
+  {path: 'list', component: ListRenderComponent}
+];
+
+
+home = firstComponent
+
+list = ListRenderCOmponent
+
+no html principal:
+
+<nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/list">Lista</a>
+</nav>
+<router-outlet></router-outlet>
+<p>footer</p>
