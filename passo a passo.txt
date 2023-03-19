@@ -263,3 +263,89 @@ no html principal:
 </nav>
 <router-outlet></router-outlet>
 <p>footer</p>
+
+
+
+
+
+
+REQUISIÇÕES HTTP!!!!!!!!!!!!!!!!!
+
+
+
+primeiramente, na pasta geral inbstalar o npm i json-server
+na pasta raiz criar o db.json para simular um banco
+{
+  "animals": [
+      {"id": 1, "name": "Turca", "type": "Dog",   "age": 4 },
+      {"id": 2, "name": "Tom",   "type": "Cat",   "age": 10 },
+      {"id": 3, "name": "Frida", "type": "Dog",   "age": 11 },
+      {"id": 4, "name": "Bob",   "type": "Horse", "age": 2 },
+      {"id": 5, "name": "Paco",  "type": "Bird",  "age": 1 }
+  ]
+}
+
+criar um script no package.json para rodar o arquivo
+da api db-json
+
+rodar no terminal a api npm run server
+
+
+importar no app.module httpCLienteModule
+
+import { HttpClientModule}
+ from '@angular/common/http'
+
+
+importar no imports
+
+abrir o list-render para trabalhare com algo 
+semehlhante ao mundo real
+
+
+requisição do componente passar pelo service
+
+
+fazer a requisição http com o getAll() no list
+service
+
+primeiro, importar os componentes do angular
+
+import { HttpClient, HttpHeaders} 
+from "@angular/common/http"
+
+
+
+declarar a url da api no listService 
+
+export class ListService {
+  private apiUrl = 'http://localhost:3000/animals'
+
+
+
+import { Observable, observable } from 'rxjs';
+
+o observable vai fazer  com que a requisição
+ocorra da melhor maneira possivel
+
+no getall(): Observable<Animal[]> {
+	
+
+como não temos acesso direto da importação,
+passar pelo constructor constructor(private http: HttpClient) { }
+
+
+no getall(): Observable<Animal[]> {
+	return this.http.get(this.apiUrl)
+
+
+no list render components, dar subscribe para 
+concretizar o evento.
+
+getAnimals(): void {
+    this.listService.getAll().subscribe
+((animals) => (this.animals = animals));
+  }
+}
+
+Requisição http fializada pelo método GET
