@@ -349,3 +349,20 @@ getAnimals(): void {
 }
 
 Requisição http fializada pelo método GET
+
+
+
+
+
+
+
+
+Dynamic Routes - dado individual 
+
+
+resgatar um dado do banco
+baseado pelo id
+para resgatar os parametros da url usar o 
+ActivatedRoute, módulo do angular
+
+
