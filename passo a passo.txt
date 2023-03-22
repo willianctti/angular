@@ -52,6 +52,33 @@ trabalhando com dados.
 
 
 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 npm i -g angular/cli //Começar o projeto
 instalando o client da angular
