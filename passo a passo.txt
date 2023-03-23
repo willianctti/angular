@@ -56,6 +56,34 @@ trabalhando com dados.
 
 
 
+DIRETIVAS
+
+
+ESTRUTURAIS;
+
+*ngIf=""
+
+export class NgIfComponent {
+  public condition: boolean = true
+
+
+  ngOnInit(): void {
+    setInterval( () => {
+      if(this.condition){
+        this.condition = false;
+      } else {
+        this.condition = true;
+      }
+    }, 2000 )
+  }
+}
+
+
+
+<p *ngIf="condition; else elseBlock">Teste</p>
+<ng-template #elseBlock>
+    <p>Sumiu</p>
+</ng-template>
 
 
 
@@ -65,11 +93,57 @@ trabalhando com dados.
 
 
 
+ngFOr
+
+itera valores de um array em um HTML
+
+
+
+ul>
+    <li *ngFor="let item of list">{{  item.nome  }} - idade {{ item.idade }}</li>
+</ul>
+<button (click)="onClickAddList()">Adicionar</button>
+
+ public list: Array<{ nome: string, idade: number}> = [
+    { nome: "Willian Nicoletti", idade: 10 },
+    { nome: "Bruna Nicoletti", idade: 18 },
+    { nome: "Lucas Gonsalves", idade: 25 }
+  ]
+
+
+
+public onClickAddList() {
+    this.list.push({nome: "Bruno", idade: 19})
+  }
+}
 
 
 
 
+ngModel
 
+
+no app.module importar
+import { FormsModule } from '@angular/forms';
+
+html
+<input [(ngModel)]="nome"> {{nome}}
+<button (click)="salvar()">Salvar</button>
+
+<li *ngFor="let item of lista">{{ item.nome }}</li>
+
+
+
+ts
+
+começa vazio o array
+
+public lista: Array<{nome: string}> = []
+
+
+ public salvar() {
+    this.lista.push({nome: this.nome});
+  }
 
 
 

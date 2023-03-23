@@ -1,0 +1,19 @@
+<p *ngIf="condition; else elseBlock">Teste</p>
+<ng-template #elseBlock>
+    <p>Sumiu</p>
+</ng-template>
+
+<hr>
+
+
+<ul>
+    <li *ngFor="let item of list">{{  item.nome  }} - idade {{ item.idade }}</li>
+</ul>
+<button (click)="onClickAddList()">Adicionar</button>
+
+<hr>
+
+<input [(ngModel)]="nome"> {{nome}}
+<button (click)="salvar()">Salvar</button>
+
+<li *ngFor="let item of lista">{{ item.nome }}</li>
