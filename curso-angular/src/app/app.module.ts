@@ -16,6 +16,7 @@ import { ChangeNumberComponent } from './components/change-number/change-number.
 import { ListRenderComponent } from './components/list-render/list-render.component';
 import { ItenDetailComponent } from './components/iten-detail/iten-detail.component';
 import { NgIfComponent } from './components/ng-if/ng-if.component';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { NgIfComponent } from './components/ng-if/ng-if.component';
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

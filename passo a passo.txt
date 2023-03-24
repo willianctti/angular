@@ -154,6 +154,196 @@ public lista: Array<{nome: string}> = []
 
 
 
+
+
+
+
+
+
+
+
+
+
+Module ANgular
+Modules- Ngmodules
+SubModules
+
+
+
+
+criar shared module com  ng g m shared
+criar component no shared com ng g c shared/NewCOmponent
+
+criar html, css ou o desejado
+exportar o newCOmponent para o shared.module com exports: [NewComponentComponent],
+
+importar o shared no app principal no app.component com
+SharedModule
+
+ imports: [
+    //FormsModule,
+    //BrowserModule,
+    //AppRoutingModule,
+    //HttpClientModule,
+    SharedModule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Input e Output
+
+
+
+input()
+
+
+ng g c shared/input 
+
+
+
+exportar o input para usalo no app principal
+
+
+
+usar o <app-input> para usar no
+html principal <app-input [contador]="addValue"></app-input>
+usando o app.component.html
+
+
+input works!
+
+
+no input.ts, 
+
+ @Input() public contador: number = 0;
+  public addValue: number = 10
+
+
+registrar com a lupinha o input
+
+
+
+
+ no app.ts
+
+ public addValue: number = 1
+
+sempre que o app inciair o valor estar[a em 1
+
+
+
+no input.html
+
+<p>Contador = {{ contador   }}</p>
+v
+
+
+
+no app.html principal,
+<button (click)="add()"> add</button>
+
+e no ts
+
+ public add() {
+    this.addValue += 1
+  }
+
+
+assim, quando o botão clicado a função add
+retornará o valor + 1
+
+
+
+
+
+
+OUTPUT!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+criei a lista e quando clicar nessa lista 
+ele emitirá um dado e esse dado será o nome da miunha lista
+
+
+public list: Array<{nome: string, idade: number}> = [
+    { nome: "WIlian", idade: 29},
+    { nome: "Bruna", idade: 87},
+    { nome: "Lucas", idade: 19}
+  ]
+
+
+
+
+para pegar o evento fora,
+ 
+@Output() public enviarDados = new EventEmitter();
+esse output sempre acontecerá quando eu clicar em
+enviar dados e emitir o valor
+
+ public getDados(event: number) {
+    this.enviarDados.emit(this.list[event]);
+
+  }
+
+
+sempre que esse evento emitir um dado
+
+<app-output (enviarDados)="setDados($event)"></app-output>
+
+aqui, quem vai capturar o evento é o setDados que 
+capturará o evento
+
+então o set dados recevera um evento 
+
+ public setDados(event: {nome: string, idade: number}) {
+    this.getDados = event;
+  }
+
+e popula o objeto
+
+
+e a partir disso eu poso mostralo na tela
+
+<ng-template [ngIf]="getDados">
+    <h1>{{ getDados.nome}}</h1>
+    <h2> {{ getDados.idade}}</h2>
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 npm i -g angular/cli //Começar o projeto
 instalando o client da angular
 
