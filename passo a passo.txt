@@ -344,6 +344,51 @@ e a partir disso eu poso mostralo na tela
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		TO DO COM ANGULAR!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 npm i -g angular/cli //Começar o projeto
 instalando o client da angular
 
